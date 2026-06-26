@@ -203,8 +203,7 @@ public ResponseEntity<Map<String, String>> handleBookNotFound(BookNotFoundExcept
 
 ### ❤️ BookFavoriteResponseDto
 
-좋아요 기능에서는 프론트엔드가 화면을 갱신할 때 필요한 응답값을 전달하기 위해
-`BookFavoriteResponseDto`를 구현했습니다.
+좋아요 기능의 응답 구조를 분리하기 위해 BookFavoriteResponseDto를 구현했습니다.
 
 ```java
 @Getter
