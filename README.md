@@ -46,9 +46,9 @@ KT AIVLE 미니프로젝트에서 진행한 **AI 도서 표지 생성 도서관�
 ### Backend
 
 ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=OpenJDK&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white)
-![Spring Data JPA](https://img.shields.io/badge/Spring Data JPA-6DB33F?style=flat-square&logo=Spring&logoColor=white)
-![H2 Database](https://img.shields.io/badge/H2 Database-09476B?style=flat-square&logo=H2&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white)
+![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-6DB33F?style=flat-square&logo=Spring&logoColor=white)
+![H2 Database](https://img.shields.io/badge/H2%20Database-09476B?style=flat-square&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white)
 
 ### Tools
