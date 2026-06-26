@@ -1,110 +1,335 @@
-# 📚 AI 도서 표지 생성 도서관리 서비스 개발 회고
+# 📚 AI Book Service
 
-## 📌 프로젝트 소개
+> React 기반 도서관리 프론트엔드를 Spring Boot 백엔드 API로 전환하고,
+> AI 표지 생성 기능과 도서 CRUD 기능을 연동한 팀 프로젝트 회고 Repository입니다.
 
-KT AIVLE 미니프로젝트에서 진행한 도서관리 웹 서비스 팀 프로젝트입니다.
+<br/>
 
-4차 미니프로젝트에서는 `React`와 `json-server`를 활용해 도서 목록 조회, 상세 조회, 등록, 수정, 삭제 기능을 가진 프론트엔드 서비스를 구현했습니다.
+## 🧩 Project Overview
 
-이후 5차 미니프로젝트에서는 기존 프론트엔드의 요청 구조를 분석하여, `json-server` 기반 데이터 처리를 `Spring Boot` 백엔드 API로 전환했습니다.
+KT AIVLE 미니프로젝트에서 진행한 **AI 도서 표지 생성 도서관리 서비스**입니다.
 
-최종적으로 도서 CRUD, AI 표지 이미지 저장, 로그인/회원가입, 좋아요, 작성자 권한 검증, 예외 처리, DTO 분리 등을 적용하며 프론트엔드와 백엔드가 분리된 웹 서비스 구조를 경험했습니다.
+4차 미니프로젝트에서는 `React`와 `json-server`를 활용해 도서관리 프론트엔드를 구현했고,
+5차 미니프로젝트에서는 기존 프론트엔드의 요청 구조를 분석하여 `Spring Boot` 기반 REST API 서버로 전환했습니다.
 
----
+이 Repository는 팀 프로젝트에서 제가 담당한 역할과 학습 내용을 정리한 **개인 회고용 Repository**입니다.
 
-## 🗓️ 프로젝트 기간
+<br/>
+
+## 🗓️ Period
 
 | 구분        | 기간                      |
 | --------- | ----------------------- |
 | 4차 미니프로젝트 | 2026.05.22 ~ 2026.05.27 |
 | 5차 미니프로젝트 | 2026.06.09 ~ 2026.06.12 |
 
----
+<br/>
 
-## 🔗 원본 Repository
+## 🔗 Original Repository
 
-* 4차 프론트엔드 프로젝트: 팀 공용 Repository
-* 5차 백엔드 연동 프로젝트: https://github.com/thadus2/5th-mini-proj
+| 구분            | Repository                               |
+| ------------- | ---------------------------------------- |
+| 4차 Frontend   | 팀 공용 Repository                          |
+| 5차 Backend 연동 | https://github.com/thadus2/5th-mini-proj |
 
-> 본 Repository는 팀 프로젝트에서 제가 담당한 역할과 학습 내용을 정리한 개인 회고용 Repository입니다.
+<br/>
 
----
+## 🛠️ Tech Stack
 
-## 🛠️ 기술 스택
+### Frontend
 
-### 💻 Frontend
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white)
 
-* React
-* Vite
-* JavaScript
-* CSS
-* json-server
-* fetch API
+### Backend
 
-### ⚙️ Backend
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=OpenJDK&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white)
+![Spring Data JPA](https://img.shields.io/badge/Spring Data JPA-6DB33F?style=flat-square&logo=Spring&logoColor=white)
+![H2 Database](https://img.shields.io/badge/H2 Database-09476B?style=flat-square&logo=H2&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white)
 
-* Java
-* Spring Boot
-* Spring Data JPA
-* H2 Database
-* Spring Security
-* JWT
-* Gradle
+### Tools
 
-### 🧰 Tools
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white)
+![Notion](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white)
 
-* GitHub
-* Postman
-* H2 Console
-* Figma
-* Notion
+<br/>
 
----
-
-## 🔄 전체 개발 흐름
+## 🔄 Development Flow
 
 ```text
-4차 미니프로젝트
-React + json-server 기반 도서관리 프론트엔드 구현
+React + json-server 기반 프론트엔드 구현
         ↓
 기존 fetch 요청 구조 분석
         ↓
-5차 미니프로젝트
-Spring Boot 기반 REST API 서버 구현
+Spring Boot REST API 서버 구현
         ↓
-프론트엔드와 백엔드 연동
+Frontend - Backend 연동
         ↓
-예외 처리, DTO 분리, 인증/권한, 좋아요 기능 고도화
+예외 처리, DTO 분리, 인증/권한 기능 고도화
 ```
 
-4차 프로젝트에서 프론트엔드 중심으로 도서관리 기능과 AI 표지 생성 흐름을 구현한 뒤,
-5차 프로젝트에서는 이를 Spring Boot 백엔드 API와 연결하며 서비스 구조를 확장했습니다.
+<br/>
 
----
+## 🙋 My Role
 
-## 🙋 담당 역할
+### 4차 미니프로젝트
 
-### 🎨 4차 미니프로젝트
+| 역할       | 내용                                       |
+| -------- | ---------------------------------------- |
+| UI 설계    | 화면 구성 스케치 및 UI 배치 검토                     |
+| AI 옵션 UI | API Key 입력, 생성 모델 선택, 이미지 크기 선택 UI 구현    |
+| 화면 동작 확인 | React 데이터 로딩/에러/빈 목록 상태 흐름 이해 및 화면 동작 확인 |
+| 발표 자료    | PPT 제작 및 발표 자료 정리                        |
 
-* 화면 구성 스케치 및 UI 배치 검토
-* AI 표지 생성 옵션 선택 UI 구현
+### 5차 미니프로젝트
 
-  * API Key 입력
-  * 생성 모델 선택
-  * 이미지 크기 선택
-  * 생성 요청 버튼 구성
-* React 데이터 로딩/에러/빈 목록 상태 처리 흐름 이해 및 화면 동작 확인
-* PPT 제작 및 발표 자료 정리
+| 역할       | 내용                                         |
+| -------- | ------------------------------------------ |
+| 연동 점검    | React 프론트엔드와 Spring Boot 백엔드 연동 과정 점검      |
+| CORS     | 프론트엔드 API 요청을 위한 CORS 설정 흐름 이해 및 연동 확인     |
+| 예외 처리    | `GlobalExceptionHandler` 기반 전역 예외 처리 구현 참여 |
+| DTO      | `BookFavoriteResponseDto` 구현               |
+| 테스트      | Postman 기반 성공/실패 케이스 테스트                   |
+| 데이터      | H2 Console 확인용 샘플 데이터 구성 참여                |
+| 기능 흐름 정리 | 좋아요, 로그인, 작성자 권한 검증 기능의 API 연동 흐름 정리       |
+| 발표 자료    | PPT 제작 및 발표 자료 정리                          |
 
-### ⚙️ 5차 미니프로젝트
+<br/>
 
-* React 프론트엔드와 Spring Boot 백엔드 연동 과정 점검
-* CORS 설정 및 API 연동 환경 구성 참여
-* `GlobalExceptionHandler` 기반 전역 예외 처리 구현 참여
-* Postman 기반 성공/실패 케이스 테스트
-* H2 Console 확인용 샘플 데이터 구성 참여
-* `BookFavoriteResponseDto` 구현
-* 좋아요, 로그인, 작성자 권한 검증 기능의 API 연동 흐름 정리
-* PPT 제작 및 발표 자료 정리
+## ✨ Features
+
+### 📚 Book CRUD
+
+도서 정보를 등록, 조회, 수정, 삭제할 수 있는 기본 CRUD 기능입니다.
+
+| 기능           | Method   | URL                            |
+| ------------ | -------- | ------------------------------ |
+| 도서 목록 조회     | `GET`    | `/api/v1/books`                |
+| 도서 상세 조회     | `GET`    | `/api/v1/books/{id}`           |
+| 도서 등록        | `POST`   | `/api/v1/books`                |
+| 도서 수정        | `PATCH`  | `/api/v1/books/{id}`           |
+| 도서 삭제        | `DELETE` | `/api/v1/books/{id}`           |
+| 조회수 증가       | `PATCH`  | `/api/v1/books/{id}/views`     |
+| 좋아요 토글       | `POST`   | `/api/v1/books/{id}/like`      |
+| AI 표지 이미지 저장 | `PATCH`  | `/api/v1/books/{id}/cover-img` |
+
+<br/>
+
+### 🎨 AI Cover Option UI
+
+AI 표지 생성 기능에서 사용자가 생성 옵션을 선택할 수 있는 UI를 구현했습니다.
+
+* API Key 입력
+* 생성 모델 선택
+* 이미지 크기 선택
+* 표지 생성 요청 버튼
+* 입력값 누락 시 안내 메시지 출력
+
+```javascript
+if (!apiKey.trim()) {
+  alert("조별 API Key를 입력해 주세요!");
+  return;
+}
+```
+
+<br/>
+
+### 🔗 Frontend - Backend Integration
+
+기존 프론트엔드에서는 `json-server`를 대상으로 API 요청을 보내고 있었습니다.
+
+5차 프로젝트에서는 기존 요청 구조를 분석하고, Spring Boot의 계층 구조에 맞게 백엔드 API를 구성했습니다.
+
+```text
+Controller
+    ↓
+Service
+    ↓
+Repository
+    ↓
+Database
+```
+
+<br/>
+
+### 🚨 Global Exception Handling
+
+존재하지 않는 도서 조회, 입력값 검증 실패, 잘못된 JSON 요청 등 예외 상황을
+일관된 JSON 응답으로 처리하기 위해 전역 예외 처리 구조를 적용했습니다.
+
+| 예외 상황            | HTTP Status                 |
+| ---------------- | --------------------------- |
+| 존재하지 않는 도서 조회/삭제 | `404 Not Found`             |
+| 입력값 검증 실패        | `400 Bad Request`           |
+| 잘못된 JSON 요청      | `400 Bad Request`           |
+| DB 제약조건 위반       | `400 Bad Request`           |
+| 그 외 서버 오류        | `500 Internal Server Error` |
+
+```java
+@ExceptionHandler(BookNotFoundException.class)
+public ResponseEntity<Map<String, String>> handleBookNotFound(BookNotFoundException e) {
+    Map<String, String> body = Map.of(
+        "error", "Book not found",
+        "message", e.getMessage()
+    );
+
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+}
+```
+
+<br/>
+
+### 📦 DTO Separation
+
+초기에는 Entity 객체가 API 응답으로 직접 반환되는 구조였습니다.
+
+이후 기능별 DTO를 분리하여 프론트엔드에 필요한 데이터만 전달하도록 응답 구조를 개선했습니다.
+
+| DTO                       | 역할          |
+| ------------------------- | ----------- |
+| `BookDetailResponseDto`   | 도서 상세 조회 응답 |
+| `BookCreateResponseDto`   | 도서 등록 응답    |
+| `BookUpdateResponseDto`   | 도서 수정 응답    |
+| `BookFavoriteResponseDto` | 좋아요 응답      |
+| `UserInfoResponseDto`     | 사용자 정보 응답   |
+
+<br/>
+
+### ❤️ BookFavoriteResponseDto
+
+좋아요 기능에서는 프론트엔드가 화면을 갱신할 때 필요한 응답값을 전달하기 위해
+`BookFavoriteResponseDto`를 구현했습니다.
+
+```java
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class BookFavoriteResponseDto {
+    private Long bookId;
+    private Integer likeCount;
+
+    public static BookFavoriteResponseDto from(Book book) {
+        return new BookFavoriteResponseDto(
+            book.getBookId(),
+            book.getLikeCount()
+        );
+    }
+}
+```
+
+Entity 전체를 반환하지 않고, 화면 갱신에 필요한 `bookId`, `likeCount`만 응답하도록 분리했습니다.
+
+<br/>
+
+### 🔐 Auth / Like / Permission Flow
+
+회원가입, 로그인, 좋아요, 작성자 권한 검증 기능은 팀 전체 기능으로 구현되었습니다.
+
+해당 기능을 직접 주도적으로 구현하지는 않았지만, 프론트엔드와 백엔드 연동 과정과 발표 자료 정리 과정에서 전체 동작 흐름을 확인했습니다.
+
+* 로그인 사용자 기준 API 요청 처리
+* 좋아요 클릭 후 응답값 화면 반영
+* 작성자 권한에 따른 수정/삭제 제한
+* JWT 기반 사용자 정보 확인 흐름
+
+<br/>
+
+## 🛠️ Troubleshooting
+
+### 1. 존재하지 않는 도서 요청 시 500 에러와 trace가 노출됨
+
+#### Problem
+
+존재하지 않는 도서 ID로 조회 또는 삭제 요청을 보낼 경우,
+클라이언트에 내부 stack trace가 포함된 `500 Internal Server Error` 응답이 반환되었습니다.
+
+#### Cause
+
+도서가 존재하지 않는 상황을 별도의 예외로 처리하지 않고, 서버 내부 오류처럼 반환하고 있었습니다.
+
+#### Solution
+
+`BookNotFoundException`을 정의하고, `GlobalExceptionHandler`에서 해당 예외를 처리하도록 구성했습니다.
+
+도서가 존재하지 않는 경우 `404 Not Found`와 정제된 JSON 응답을 반환하도록 변경했습니다.
+
+#### What I Learned
+
+백엔드 API는 정상 동작뿐 아니라 실패 상황에서 클라이언트가 이해할 수 있는 상태코드와 메시지를 내려주는 것도 중요하다는 점을 배웠습니다.
+
+<br/>
+
+### 2. 필수값 누락 시 의도와 다른 상태코드가 반환됨
+
+#### Problem
+
+필수값이 누락된 요청은 클라이언트 요청 오류이므로 `400 Bad Request`가 반환되어야 하지만,
+일부 경우 `500 Internal Server Error`가 반환되는 문제가 있었습니다.
+
+#### Cause
+
+입력값 검증 단계에서 걸러지지 않은 값이 DB 제약조건 위반으로 이어지면서 서버 내부 오류처럼 처리되었습니다.
+
+#### Solution
+
+입력값 검증 어노테이션과 전역 예외 처리를 적용하여
+`MethodArgumentNotValidException`, `DataIntegrityViolationException` 등을 `400 Bad Request`로 정리했습니다.
+
+#### What I Learned
+
+DB 제약조건에만 의존하기보다, API 요청 단계에서 먼저 검증하고 명확한 오류 메시지를 제공하는 것이 중요하다는 점을 배웠습니다.
+
+<br/>
+
+### 3. Entity 직접 반환 문제
+
+#### Problem
+
+초기 API 응답은 Entity 객체를 직접 반환하는 구조였습니다.
+
+이 경우 프론트엔드에 필요하지 않은 필드까지 함께 전달될 수 있고,
+Entity 구조가 바뀌면 API 응답 구조도 함께 영향을 받을 수 있었습니다.
+
+#### Solution
+
+기능별 ResponseDto를 분리하여 프론트엔드에 필요한 데이터만 전달하도록 구조를 개선했습니다.
+
+특히 좋아요 기능에서는 `BookFavoriteResponseDto`를 통해 `bookId`, `likeCount`처럼 화면 갱신에 필요한 값만 응답하도록 정리했습니다.
+
+#### What I Learned
+
+DTO는 단순히 데이터를 담는 클래스가 아니라, 백엔드와 프론트엔드 사이의 응답 구조를 명확하게 정의하는 역할을 한다는 점을 배웠습니다.
+
+<br/>
+
+## 📌 What I Learned
+
+이번 프로젝트를 통해 프론트엔드와 백엔드가 분리된 웹 서비스에서
+API 명세, CORS 설정, 예외 처리, DTO 분리가 중요하다는 점을 경험했습니다.
+
+특히 직접 구현에 참여한 DTO 분리와 전역 예외 처리 과정에서 다음 내용을 배웠습니다.
+
+* 실패 상황에서 적절한 HTTP 상태코드와 메시지를 반환하는 방법
+* 프론트엔드가 필요한 응답 구조를 기준으로 DTO를 설계하는 방법
+* Entity를 직접 반환했을 때 발생할 수 있는 문제
+* API 요청과 응답이 프론트엔드와 백엔드 사이의 약속이라는 점
+
+<br/>
+
+## 🙋 Retrospective
+
+4차 미니프로젝트에서는 AI 표지 생성 옵션 UI를 구현하며 사용자 입력값을 React state로 관리하고, 선택한 옵션에 따라 API 요청 값이 달라지는 흐름을 경험했습니다.
+
+5차 미니프로젝트에서는 Spring Boot 백엔드와 프론트엔드를 연동하며 Controller, Service, Repository 계층 구조와 예외 처리 흐름을 경험했습니다.
+
+특히 DTO를 분리하며 Entity를 그대로 반환하지 않고, 기능별로 필요한 응답값만 전달하는 구조의 필요성을 이해했습니다.
+
+이번 프로젝트를 통해 기능 구현뿐 아니라, API 응답 구조와 예외 처리처럼 프론트엔드와의 연동을 고려한 백엔드 설계가 중요하다는 점을 배웠습니다.
 
 
